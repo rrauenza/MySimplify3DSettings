@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<profile name="Original Prusa i3 MK3/MK3S" version="2020-04-18 19:19:31" app="S3D-Software 4.1.2">
+<profile name="Original Prusa i3 MK3/MK3S" version="2020-04-18 22:20:25" app="S3D-Software 4.1.2">
   <baseProfile>Prusa Mendel (modified)</baseProfile>
-  <printMaterial>PLA</printMaterial>
-  <printQuality>0.20mm NORMAL</printQuality>
+  <printMaterial>PET</printMaterial>
+  <printQuality>0.30mm FAST</printQuality>
   <printExtruders></printExtruders>
   <extruder name="Primary Extruder">
     <toolheadNumber>0</toolheadNumber>
     <diameter>0.4</diameter>
-    <autoWidth>1</autoWidth>
-    <width>0.48</width>
+    <autoWidth>0</autoWidth>
+    <width>0.5</width>
     <extrusionMultiplier>0.95</extrusionMultiplier>
     <useRetract>1</useRetract>
     <retractionDistance>0.8</retractionDistance>
@@ -21,9 +21,9 @@
     <wipeDistance>2</wipeDistance>
   </extruder>
   <primaryExtruder>0</primaryExtruder>
-  <layerHeight>0.2</layerHeight>
-  <topSolidLayers>5</topSolidLayers>
-  <bottomSolidLayers>4</bottomSolidLayers>
+  <layerHeight>0.3</layerHeight>
+  <topSolidLayers>4</topSolidLayers>
+  <bottomSolidLayers>3</bottomSolidLayers>
   <perimeterOutlines>2</perimeterOutlines>
   <printPerimetersInsideOut>1</printPerimetersInsideOut>
   <startPointOption>3</startPointOption>
@@ -31,7 +31,7 @@
   <startPointOriginY>300</startPointOriginY>
   <sequentialIslands>0</sequentialIslands>
   <spiralVaseMode>0</spiralVaseMode>
-  <firstLayerHeightPercentage>75</firstLayerHeightPercentage>
+  <firstLayerHeightPercentage>50</firstLayerHeightPercentage>
   <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
   <firstLayerUnderspeed>0.45</firstLayerUnderspeed>
   <useRaft>0</useRaft>
@@ -44,7 +44,7 @@
   <aboveRaftSpeedMultiplier>0.3</aboveRaftSpeedMultiplier>
   <useSkirt>1</useSkirt>
   <skirtExtruder>0</skirtExtruder>
-  <skirtLayers>3</skirtLayers>
+  <skirtLayers>1</skirtLayers>
   <skirtOutlines>1</skirtOutlines>
   <skirtOffset>2</skirtOffset>
   <usePrimePillar>0</usePrimePillar>
@@ -90,18 +90,19 @@
     <temperatureNumber>0</temperatureNumber>
     <isHeatedBed>0</isHeatedBed>
     <stabilizeAtStartup>1</stabilizeAtStartup>
-    <setpoint layer="1" temperature="215"/>
-    <setpoint layer="2" temperature="210"/>
+    <setpoint layer="1" temperature="230"/>
+    <setpoint layer="2" temperature="240"/>
   </temperatureController>
   <temperatureController name="Heated Bed">
     <temperatureNumber>0</temperatureNumber>
     <isHeatedBed>1</isHeatedBed>
     <stabilizeAtStartup>1</stabilizeAtStartup>
-    <setpoint layer="1" temperature="60"/>
+    <setpoint layer="1" temperature="85"/>
+    <setpoint layer="2" temperature="90"/>
   </temperatureController>
   <fanSpeed>
     <setpoint layer="1" speed="0"/>
-    <setpoint layer="2" speed="100"/>
+    <setpoint layer="4" speed="50"/>
   </fanSpeed>
   <blipFanToFullPower>0</blipFanToFullPower>
   <adjustSpeedForCooling>1</adjustSpeedForCooling>
@@ -111,7 +112,7 @@
   <minFanLayerTime>20</minFanLayerTime>
   <maxCoolingFanSpeed>50</maxCoolingFanSpeed>
   <increaseFanForBridging>1</increaseFanForBridging>
-  <bridgingFanSpeed>100</bridgingFanSpeed>
+  <bridgingFanSpeed>50</bridgingFanSpeed>
   <use5D>1</use5D>
   <relativeEdistances>1</relativeEdistances>
   <allowEaxisZeroing>1</allowEaxisZeroing>
@@ -143,7 +144,7 @@
   <baudRateOverride>115200</baudRateOverride>
   <overridePrinterModels>1</overridePrinterModels>
   <printerModelsOverride></printerModelsOverride>
-  <startingGcode>M115 U3.6.0 ; tell printer latest fw version,M205 X8.00 Y8.00 Z0.40 E1.50 ; sets the jerk limits mm/sec,G28 W ; home all without mesh bed level,G80 ; mesh bed leveling,G1 Y-3.0 F1000.0 ; go outside printing area,G92 E0.0,G1 X60.0 E9.0  F1000.0 ; intro line,G1 X100.0 E12.5  F1000.0 ; intro line,G92 E0.0,M221 S100,M900 K30 ; Linear Advance PLA,</startingGcode>
+  <startingGcode>M115 U3.6.0 ; tell printer latest fw version,M205 X8.00 Y8.00 Z0.40 E1.50 ; sets the jerk limits mm/sec,G28 W ; home all without mesh bed level,G80 ; mesh bed leveling,G1 Y-3.0 F1000.0 ; go outside printing area,G92 E0.0,G1 X60.0 E9.0  F1000.0 ; intro line,G1 X100.0 E12.5  F1000.0 ; intro line,G92 E0.0,M221 S100,M900 K45 ; Linear Advance PET,</startingGcode>
   <layerChangeGcode></layerChangeGcode>
   <retractionGcode></retractionGcode>
   <toolChangeGcode></toolChangeGcode>
@@ -153,7 +154,7 @@
   <celebrationSong>Take On Me</celebrationSong>
   <postProcessing>{REPLACE &quot;; feature outer perimeter\n&quot; &quot;; feature outer perimeter\nM204 S800\n&quot;},{REPLACE &quot;; feature inner perimeter\n&quot; &quot;; feature inner perimeter\nM204 S1000\n&quot;},{REPLACE &quot;; feature solid layer\n&quot; &quot;; feature solid layer\nM204 S1000\n&quot;},{REPLACE &quot;; feature infill\n&quot; &quot;; feature infill\nM204 S1250\n&quot;},{STRIP &quot;; postProcessing&quot;},c:\Users\Rich\Documents\3DPrinting\bin\octopush.bat &quot;[output_filepath]&quot; </postProcessing>
   <defaultSpeed>3600</defaultSpeed>
-  <outlineUnderspeed>0.5</outlineUnderspeed>
+  <outlineUnderspeed>0.7</outlineUnderspeed>
   <solidInfillUnderspeed>0.65</solidInfillUnderspeed>
   <supportUnderspeed>0.8</supportUnderspeed>
   <rapidXYspeed>10800</rapidXYspeed>
@@ -166,8 +167,8 @@
   <fixedBridgingAngle>0</fixedBridgingAngle>
   <applyBridgingToPerimeters>0</applyBridgingToPerimeters>
   <filamentDiameters>1.75|1.75|1.75|1.75|1.75|1.75</filamentDiameters>
-  <filamentPricesPerKg>24.99|24.99|24.99|24.99|24.99|24.99</filamentPricesPerKg>
-  <filamentDensities>1.24|1.24|1.24|1.24|1.24|1.24</filamentDensities>
+  <filamentPricesPerKg>29.99|29.99|29.99|29.99|29.99|29.99</filamentPricesPerKg>
+  <filamentDensities>1.27|1.27|1.27|1.27|1.27|1.27</filamentDensities>
   <useMinPrintHeight>0</useMinPrintHeight>
   <minPrintHeight>0</minPrintHeight>
   <useMaxPrintHeight>0</useMaxPrintHeight>
@@ -284,7 +285,7 @@
     <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
     <topSolidLayers>10</topSolidLayers>
     <bottomSolidLayers>8</bottomSolidLayers>
-    <skirtLayers>3</skirtLayers>
+    <skirtLayers>1</skirtLayers>
     <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>30</supportInfillPercentage>
     <defaultSpeed>2700</defaultSpeed>
@@ -320,7 +321,7 @@
     <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
     <topSolidLayers>8</topSolidLayers>
     <bottomSolidLayers>5</bottomSolidLayers>
-    <skirtLayers>3</skirtLayers>
+    <skirtLayers>1</skirtLayers>
     <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>30</supportInfillPercentage>
     <defaultSpeed>3600</defaultSpeed>
@@ -356,7 +357,7 @@
     <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
     <topSolidLayers>5</topSolidLayers>
     <bottomSolidLayers>4</bottomSolidLayers>
-    <skirtLayers>3</skirtLayers>
+    <skirtLayers>1</skirtLayers>
     <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>30</supportInfillPercentage>
     <defaultSpeed>3600</defaultSpeed>
@@ -392,7 +393,7 @@
     <firstLayerWidthPercentage>100</firstLayerWidthPercentage>
     <topSolidLayers>4</topSolidLayers>
     <bottomSolidLayers>3</bottomSolidLayers>
-    <skirtLayers>3</skirtLayers>
+    <skirtLayers>1</skirtLayers>
     <infillPercentage>20</infillPercentage>
     <supportInfillPercentage>30</supportInfillPercentage>
     <defaultSpeed>3600</defaultSpeed>
@@ -400,7 +401,7 @@
     <solidInfillUnderspeed>0.65</solidInfillUnderspeed>
     <supportUnderspeed>0.8</supportUnderspeed>
     <infillExtrusionWidthPercentage>100</infillExtrusionWidthPercentage>
-    <postProcessing>{REPLACE &quot;; feature outer perimeter\n&quot; &quot;; feature outer perimeter\nM204 S800\n&quot;},{REPLACE &quot;; feature inner perimeter\n&quot; &quot;; feature inner perimeter\nM204 S1000\n&quot;},{REPLACE &quot;; feature solid layer\n&quot; &quot;; feature solid layer\nM204 S1000\n&quot;},{REPLACE &quot;; feature infill\n&quot; &quot;; feature infill\nM204 S1250\n&quot;}</postProcessing>
+    <postProcessing>{REPLACE &quot;; feature outer perimeter\n&quot; &quot;; feature outer perimeter\nM204 S800\n&quot;},{REPLACE &quot;; feature inner perimeter\n&quot; &quot;; feature inner perimeter\nM204 S1000\n&quot;},{REPLACE &quot;; feature solid layer\n&quot; &quot;; feature solid layer\nM204 S1000\n&quot;},{REPLACE &quot;; feature infill\n&quot; &quot;; feature infill\nM204 S1250\n&quot;},{STRIP &quot;; postProcessing&quot;},c:\Users\Rich\Documents\3DPrinting\bin\octopush.bat &quot;[output_filepath]&quot; </postProcessing>
     <perimeterOutlines>2</perimeterOutlines>
     <firstLayerUnderspeed>0.45</firstLayerUnderspeed>
     <minSpeedLayerTime>15</minSpeedLayerTime>
