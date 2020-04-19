@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<profile name="Original Prusa i3 MK3/MK3S" version="2019-03-25 08:30:42" app="S3D-Software 4.1.1">
+<profile name="Original Prusa i3 MK3/MK3S" version="2020-04-18 19:19:31" app="S3D-Software 4.1.2">
   <baseProfile>Prusa Mendel (modified)</baseProfile>
   <printMaterial>PLA</printMaterial>
   <printQuality>0.20mm NORMAL</printQuality>
@@ -151,7 +151,7 @@
   <exportFileFormat>gcode</exportFileFormat>
   <celebration>0</celebration>
   <celebrationSong>Take On Me</celebrationSong>
-  <postProcessing>{REPLACE &quot;; feature outer perimeter\n&quot; &quot;; feature outer perimeter\nM204 S800\n&quot;},{REPLACE &quot;; feature inner perimeter\n&quot; &quot;; feature inner perimeter\nM204 S1000\n&quot;},{REPLACE &quot;; feature solid layer\n&quot; &quot;; feature solid layer\nM204 S1000\n&quot;},{REPLACE &quot;; feature infill\n&quot; &quot;; feature infill\nM204 S1250\n&quot;}</postProcessing>
+  <postProcessing>{REPLACE &quot;; feature outer perimeter\n&quot; &quot;; feature outer perimeter\nM204 S800\n&quot;},{REPLACE &quot;; feature inner perimeter\n&quot; &quot;; feature inner perimeter\nM204 S1000\n&quot;},{REPLACE &quot;; feature solid layer\n&quot; &quot;; feature solid layer\nM204 S1000\n&quot;},{REPLACE &quot;; feature infill\n&quot; &quot;; feature infill\nM204 S1250\n&quot;},{STRIP &quot;; postProcessing&quot;},c:\Users\Rich\Documents\3DPrinting\bin\octopush.bat &quot;[output_filepath]&quot; </postProcessing>
   <defaultSpeed>3600</defaultSpeed>
   <outlineUnderspeed>0.5</outlineUnderspeed>
   <solidInfillUnderspeed>0.65</solidInfillUnderspeed>
@@ -364,7 +364,7 @@
     <solidInfillUnderspeed>0.65</solidInfillUnderspeed>
     <supportUnderspeed>0.8</supportUnderspeed>
     <infillExtrusionWidthPercentage>100</infillExtrusionWidthPercentage>
-    <postProcessing>{REPLACE &quot;; feature outer perimeter\n&quot; &quot;; feature outer perimeter\nM204 S800\n&quot;},{REPLACE &quot;; feature inner perimeter\n&quot; &quot;; feature inner perimeter\nM204 S1000\n&quot;},{REPLACE &quot;; feature solid layer\n&quot; &quot;; feature solid layer\nM204 S1000\n&quot;},{REPLACE &quot;; feature infill\n&quot; &quot;; feature infill\nM204 S1250\n&quot;}</postProcessing>
+    <postProcessing>{REPLACE &quot;; feature outer perimeter\n&quot; &quot;; feature outer perimeter\nM204 S800\n&quot;},{REPLACE &quot;; feature inner perimeter\n&quot; &quot;; feature inner perimeter\nM204 S1000\n&quot;},{REPLACE &quot;; feature solid layer\n&quot; &quot;; feature solid layer\nM204 S1000\n&quot;},{REPLACE &quot;; feature infill\n&quot; &quot;; feature infill\nM204 S1250\n&quot;},{STRIP &quot;; postProcessing&quot;},c:\Users\Rich\Documents\3DPrinting\bin\octopush.bat &quot;[output_filepath]&quot; </postProcessing>
     <perimeterOutlines>2</perimeterOutlines>
     <firstLayerUnderspeed>0.45</firstLayerUnderspeed>
     <minSpeedLayerTime>15</minSpeedLayerTime>
